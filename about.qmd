@@ -1,0 +1,24 @@
+---
+title: ""
+format: 
+  html:
+    mainfont: segoe UI
+    fontsize: 15px
+    
+toc: false      
+editor: visual 
+---
+
+::: center-align3
+We are from 2022/2023 ISSS608 Visual Analytics & Applications Project Team 3:
+:::
+
+<center>Liang Sze Leong</center>
+
+<center>Ong Chae Hui, Trisa </center>
+
+<center>Chan Hin Phung</center>
+
+<center>&</center>
+
+<center>Special Thanks to [Prof Kam Tin Seong]{style="color: brown;"} for his dedication, patience, and time in providing us with guidance and consultation, assisting in troubleshoot technical issues on our machines, and answering our never-ending questions.</center>

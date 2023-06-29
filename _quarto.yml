@@ -1,0 +1,35 @@
+project:
+  type: website
+
+website:
+  title: "Home"
+  
+  navbar:
+    
+    right:
+      - href: overview.qmd
+        text: Overview
+      - href: proposal.qmd
+        text: Proposal
+      - href: https://vastchallengevag3.shinyapps.io/FishyBiz/
+        text: Shiny App
+      - href: poster.qmd
+        text: Poster
+      - href: userguide.qmd
+        text: User Guide
+      - href: about.qmd
+        text: About Us
+
+  search:
+    location: navbar
+    type: textbox
+
+format:
+  html:
+    theme:
+      light: yeti
+    css: styles.css
+    toc: true
+
+editor: visual
+

@@ -1,0 +1,179 @@
+---
+title: ""
+format: 
+  html:
+    mainfont: segoe UI
+    fontsize: 15px
+      
+editor: visual  
+---
+
+::: left-align
+# Overview
+:::
+
+::: left-align
+## 1. Introduction
+:::
+
+FishEye International is a non-profit organisation which focuses on countering illegal, unreported, and unregulated (IUU) fishing. They had believed that companies with anomalous structures are far more likely to be involved in IUU. After obtaining access to an international database on fishing related companies including information about companies, owners, workers, and financial status, FishEye is aiming to use this graph to identify anomalies that could indicate a company is involved in IUU.
+
+A dashboard will be developed to enable interactive web-enabled visualizations and allow users to select and visualize companies through the lens of different dimensions. Users will be able to draw comparisons between companies based on different attributes selected and network size to identify and infer possible involvements in illegal activities.
+
+The application is built to integrate techniques from data analytics and data visualizations by using R shiny.
+
+::: left-align
+## 2. Data Description
+:::
+
+Datasets are provided from the Vast Challenge 2023 official website in csv format. They contain information on the nodes symbolising each identified companies, information such as products and services offered, revenue and country of registration, as well as the network links to business owners and company contacts.
+
+::: left-align
+## 3. Methodology
+:::
+
+The team will carry out data preparation and processing, as well as feature engineering techniques as follows.
+
+-   Data Preparation: This will be carried out using data cleaning techniques to check for missing values, duplicates and inconsistencies in the data format and data categorisation.
+
+-   Data wrangling: Perform key functions such as data aggregation, data filtering for relevant visualisation needs and data conversion to readable formats by various R packages to obtain deeper data insights.
+
+-   Descriptive analysis: Use appropriate static and interactive statistical graphs to describe entities.
+
+-   Dashboarding: Compile all the graphs onto an user-interactive dashboard using R Shiny to visualise and explore the analysis and results.
+
+The following R packages will be used in the project.
+
+-   shiny- To build interactive web applications and dashboards directly from R code
+
+-   shinythemes-To apply different visual themes to Shiny applications
+
+-   tidyverse-To support basic data manipulation
+
+-   treemap- To create treemaps, a type of data visualization that displays hierarchical data using nested rectangles
+
+-   showtext- To allow using custom fonts in R plots and graphics
+
+-   ploty- To create a wide range of interactive plots, including scatter plots, line plots, bar charts, pie charts
+
+-   bslib- To customise and style web-based applications and documents created with R Markdown, Shiny, and other web frameworks in R
+
+-   wordcloud- To create visually appealing word clouds from text data
+
+-   tm- To provide a set of tools and functionalities for text mining and natural language processing (NLP) tasks
+
+-   visNetwork- To allow creating interactive network visualizations in R
+
+-   ggraph- To provides additional functionality for creating and customizing network and graph visualization
+
+-   tidygraph- To provide a tidy API for graph manipulation and analysis
+
+-   ggtext- To provide enhanced support for rendering rich text and formatting options within ggplot2 visualizations
+
+-   DT- To create interactive data table
+
+::: left-align
+## 4.Story Boarding
+:::
+
+::: left-align
+### 4.1 Exploring Networks of Companies
+:::
+
+::: left-align
+#### Problem Statement
+:::
+
+Use visual analytics to identify anomalies in the business groups present in the knowledge graph.
+
+::: left-align
+#### Visualisation
+:::
+
+It is pertinent to first understand the characteristics of the companies' network of and attempt to establish the relationship of the entities (beneficial owners and company contacts) that are linked with the respective companies. This visualization reveals the network graphs on individual linkages between the company and its owner(s), as well as between the company and its contract(s). Another visualization shows the sub networks of the companies with their interaction with the various entities (owners and contacts) within the entire dataset using community grouping, based on the level of connectivity to each company.
+
+::: left-align
+### 4.2 Identifying Different Business Groups
+:::
+
+::: left-align
+#### Problem Statement
+:::
+
+Develop a visual analytics process to find similar businesses and group them. This analysis should focus on a business's most important features and present those features clearly to the user. Measure similarity of businesses that you group in the previous question. Express confidence in your groupings visually
+
+::: left-align
+#### Visualisation
+:::
+
+FishEye's knowledge graph contains a long list of companies encompassing a diverse spectrum of industries. This visualisation will help to identify and group the companies into distinctive business clusters based on the relevance of the companies' product and service types using suitable key words. Tree maps are presented to provide more details of key companies in the respective business groups from the perspective of revenue amount and country registered.
+
+In addition to the above, word clouds will be displayed to provide a sensing on the predominant types of products and services which the companies are involved in. This information will enable the team to potentially narrow down the appropriate business groups for more detailed analysis of possible involvement in illegal fishing activities.
+
+
+
+::: left-align
+### 4.3 Closing in Suspicious Companies
+:::
+
+::: left-align
+#### Problem Statement
+:::
+
+Based on your visualizations, provide evidence for or against the case that anomalous companies are involved in illegal fishing. Which business groups should FishEye investigate further?
+
+::: left-align
+#### Visualisation
+:::
+
+Following the identification of the relevant business group that could potentially be involved in illegal fishing activities, the investigation will focus on the companies within the identified business group. This visualization shows the company network profiles, and the characterisation of the interaction with the respective entities (beneficial owner and company contacts).
+
+The visualisation subsequently narrows down to the relevant companies suspected of their involvement in illegal fishing activities. It highlights to the audience on anomalies of the network structures and patterns, in particularly on unusually high inter-connectivity between node entities. Deeper insights on the attributes of companies on suspicion will be revealed.
+
+::: left-align
+## 5. Reflection
+:::
+
+This section discusses the challenges faced in carrying out this project and how they are overcome. Suggestions for future improvements including acquiring additional resources to aid in the project execution and the proposed follow-up activities will also be documented.
+
+::: left-align
+### 5.1 Challenges encountered in the project
+:::
+
+The dataset based on the knowledge graph presented certain challenges for the analysis,
+
+::: left-align
+#### 5.1.1 Insufficient Data for Investigation
+:::
+
+The entire Nodes and Edges record dataset contains only the names of the companies, beneficial owners and company contacts, together with other attributes on company revenue and country the companies are registered. The data does not provide further details on the entity or mode of interactions (e.g. vessel types or ID) or any historical records of illegal activities for reference. Hence, there are no distinctive clues for the team to establish evidence of illegal fishing activities, and that the team could only based on these limited parameters to make possible inference.
+
+::: left-align
+#### 5.1.2 Data Quality Issues
+:::
+
+There were data quality issues, such data inconsistency, and unclean data.
+
+(a) On the Node Records, it was observed that:
+
+    • There are missing values (NA), unknown and character(0) in revenue_omu and product_services fields;
+
+    • Not all records are fishing-related; and
+
+    • Large number of Beneficial Owners and Company Contacts could not be found here, even though they were present in the Edge records.
+
+(b) On the Edges Records, it was observed that the source field contains sub-lists, and extraction of these sub-lists would be needed to be carried out.
+
+::: left-align
+### 5.2 Future improvements
+:::
+
+More comprehensive analysis could be carried out in future with the following improvements:
+
+(a) More details on the target and source nodes, particular the mode of interactions, could be provided to aid the analysis. For example, a vessel-to vessel interaction in the open sea could flag out an alert on potential illegal activities.
+
+(b) Additional complementary information such as geo-positioning data would also be useful to pinpoint the location and time of the interaction between entities. This can be further validated with evidence from satellite images to support the findings. In addition, historical evidence of illegal activities of the entities would be useful to further strengthen our suspicions.
+
+(c) Include all missing values in the dataset (where possible as some missing data could be due to deliberate acts of not surrendering/declaring information). The full suite of data would help to uncover more insights by making extensive comparisons between each of the entities.
+
+(d) Dataset could be presented in a more structured way without embedding any sub-lists.

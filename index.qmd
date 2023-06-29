@@ -1,0 +1,32 @@
+---
+title: ""
+format: 
+  html:
+    mainfont: segoe UI
+    fontsize: 15px
+    
+toc: false
+editor: visual   
+---
+
+::: center-align
+*A Fishy Business!*
+:::
+
+![](cartoon-style-yellow-fish-vector.jpg){fig-align="center" width="197"}
+
+::: center-align1
+This Visual Analytics Project is based on Vast Challenge 2023.
+
+FishEye International is a non-profit organisation which focuses on countering illegal, unreported, and unregulated (IUU) fishing. They had believed that companies with anomalous structures are far more likely to be involved in IUU. After obtaining access to an international database on fishing related companies, FishEye aims to identify anomalies that could indicate a company is involved in IUU.
+
+Find out what are the different types of business groups, where to detect for tell-tale signs of possible involvement in illegal activities and how to identify and zero in suspicious companies!
+:::
+
+::: center-align1
+[Launch our Interactive App here to discover more!](https://vastchallengevag3.shinyapps.io/FishyBiz/)
+:::
+
+::: center-align2
+© Copyright ISSS608, 2023 School of Computing and Information Systems, Singapore Management University
+:::
